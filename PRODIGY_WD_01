@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Landing Page</title>
+    <style>
+      /* General reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      /* Header styles */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        z-index: 1000;
+        padding: 10px 0;
+        transition: background-color 0.3s ease;
+      }
+
+      #navbar {
+        display: flex;
+        justify-content: center;
+      }
+
+      #navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      #navbar li {
+        margin: 0 10px;
+      }
+
+      #navbar li a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      #navbar li a:hover {
+        background-color: #555;
+      }
+
+      /* Main sections */
+      section {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      section:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      h2 {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav id="navbar">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="home">
+      <h2>Home Section</h2>
+      <p>Welcome to our landing page!</p>
+    </section>
+
+    <section id="about">
+      <h2>About Section</h2>
+      <p>Learn more about us.</p>
+    </section>
+
+    <section id="services">
+      <h2>Services Section</h2>
+      <p>Discover our services.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Section</h2>
+      <p>Get in touch with us.</p>
+    </section>
+
+    <script>
+      // JavaScript for changing navbar style on scroll
+      window.addEventListener("scroll", function () {
+        var header = document.querySelector("header");
+        header.classList.toggle("scrolled", window.scrollY > 0);
+      });
+    </script>
+  </body>
+</html>
