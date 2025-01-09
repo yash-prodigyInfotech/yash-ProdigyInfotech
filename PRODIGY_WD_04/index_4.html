@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Name - Web Developer</title>
+    <style>
+      /* Reset and basic styling */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f0f0f0;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Navigation bar */
+      nav {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      nav .logo {
+        font-size: 1.5rem;
+        margin-left: 20px;
+      }
+
+      .nav-links {
+        list-style-type: none;
+        display: flex;
+        margin-right: 20px;
+      }
+
+      .nav-links li {
+        margin: 0 10px;
+      }
+
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        background-color: #555;
+        border-radius: 4px;
+      }
+
+      /* Home section */
+      .home {
+        padding: 100px 0;
+        text-align: center;
+        background-color: #fff;
+        color: #333;
+      }
+
+      .intro {
+        margin-bottom: 40px;
+      }
+
+      .intro h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+
+      .intro p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+
+      .hero-img img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #555;
+      }
+
+      /* About Me section */
+      .about {
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .about h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+      }
+
+      .bio {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .bio p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+
+      /* Projects section */
+      .projects {
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .projects h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        justify-items: center;
+      }
+
+      .project-item {
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: left;
+      }
+
+      .project-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+
+      .project-item h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      .project-item p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+
+      /* Contact section */
+      .contact {
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .contact h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+      }
+
+      .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+        display: grid;
+        gap: 20px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      .contact-form button {
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .contact-form button:hover {
+        background-color: #555;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .footer p {
+        margin: 0;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          background-color: #333;
+          width: 100%;
+          text-align: center;
+          flex-direction: column;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .nav-links li {
+          margin: 10px 0;
+        }
+
+        .nav-links a {
+          padding: 10px 20px;
+        }
+
+        .hero-img img {
+          width: 150px;
+          height: 150px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="container">
+        <h1 class="logo">Your Name</h1>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home">
+      <div class="container">
+        <div class="intro">
+          <h1>Hi, I'm Your Name</h1>
+          <p>
+            A passionate web developer with expertise in HTML, CSS, JavaScript,
+            and more.
+          </p>
+          <a href="#projects" class="btn">View Projects</a>
+        </div>
+        <div class="hero-img">
+          <img src="profile-photo.jpg" alt="Your Name" />
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <div class="bio">
+          <p>
+            Insert your detailed background, education, and professional
+            experience here. Showcase your skills and accomplishments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="project-grid">
+          <!-- Example project item -->
+          <div class="project-item">
+            <img src="project1-thumbnail.jpg" alt="Project 1" />
+            <h3>Project 1 Title</h3>
+            <p>
+              Description of Project 1. Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit.
+            </p>
+            <a href="#" class="btn">View Project</a>
+          </div>
+          <!-- Add more project items as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Contact Me</h2>
+        <form action="#" method="POST" class="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows="4"
+            required
+          ></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript for smooth scrolling -->
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
